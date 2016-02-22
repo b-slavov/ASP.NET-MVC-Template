@@ -2,13 +2,13 @@
 {
     using System;
     using App_Start;
+    using Data;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
-    using MvcTemplate.Web.Models;
+    using MvcTemplate.Data.Models;
     using Owin;
-    using ViewModels;
 
     public partial class Startup
     {
