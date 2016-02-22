@@ -1,9 +1,7 @@
 ﻿namespace MvcTemplate.Web
 {
-    using System;
     using System.Reflection;
     using System.Web.Mvc;
-    using System.Diagnostics;
     using Autofac;
     using Autofac.Integration.Mvc;
 
@@ -39,20 +37,7 @@
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-            builder.Register(x => new Service()).As<IService>().InstancePerRequest();
-        }
-    }
 
-    public interface IService
-    {
-        void Work();
-    }
-
-    public class Service : IService
-    {
-        public void Work()
-        {
-            Trace.WriteLine("I am working...");
         }
     }
 }

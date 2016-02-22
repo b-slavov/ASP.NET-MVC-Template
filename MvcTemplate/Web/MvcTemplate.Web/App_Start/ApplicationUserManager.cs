@@ -49,11 +49,7 @@
                 new PhoneNumberTokenProvider<ApplicationUser> { MessageFormat = "Your security code is {0}" });
             manager.RegisterTwoFactorProvider(
                 "Email Code",
-                new EmailTokenProvider<ApplicationUser>
-                {
-                    Subject = "Security Code",
-                    BodyFormat = "Your security code is {0}"
-                });
+                new EmailTokenProvider<ApplicationUser> { Subject = "Security Code", BodyFormat = "Your security code is {0}" });
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
