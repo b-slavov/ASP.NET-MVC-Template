@@ -7,6 +7,7 @@
     using Autofac.Integration.Mvc;
     using Data;
     using Data.Common;
+    using Services.Data;
 
     public static class AutofacConfig
     {
@@ -41,6 +42,10 @@
         private static void RegisterServices(ContainerBuilder builder)
         {
             builder.Register(x => new ApplicationDbContext()).As<DbContext>().InstancePerRequest();
+
+            var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+
             builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
         }
     }

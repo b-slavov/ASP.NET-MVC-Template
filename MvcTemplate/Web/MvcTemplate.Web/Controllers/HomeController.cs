@@ -1,20 +1,18 @@
 ﻿namespace MvcTemplate.Web.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Mvc;
-    using Data.Common;
-    using Data.Models;
     using Infrastructure.Mapping;
     using ViewModels.Home;
+    using Services.Data;
 
     public class HomeController : Controller
     {
-        private IDbRepository<Joke> jokes;
+        private IJokesService jokes;
 
-        private IDbRepository<JokeCategory> jokeCategories;
+        private ICategoriesService jokeCategories;
 
-        public HomeController(IDbRepository<Joke> jokes, IDbRepository<JokeCategory> jokeCategories)
+        public HomeController(IJokesService jokes, ICategoriesService jokeCategories)
         {
             this.jokes = jokes;
             this.jokeCategories = jokeCategories;
@@ -22,8 +20,15 @@
 
         public ActionResult Index()
         {
-            var jokes = this.jokes.All().OrderBy(x => Guid.NewGuid()).Take(3).To<JokeViewModel>().ToList();
-            return this.View(jokes);
+            var jokes = this.jokes.GetRandomJokes(3).To<JokeViewModel>().ToList();
+            var categories = this.jokeCategories.GetAll().To<JokeCategoryViewModel>().ToList();
+            var viewModel = new IndexViewModel
+            {
+                Jokes = jokes,
+                Categories = categories
+            };
+
+            return this.View(viewModel);
         }
     }
 }

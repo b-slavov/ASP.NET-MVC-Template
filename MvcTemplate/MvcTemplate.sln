@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTemplate.Web", "Web\MvcT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTemplate.Web.Infrastructure", "Web\MvcTemplate.Web.Infrastructure\MvcTemplate.Web.Infrastructure.csproj", "{4FB56885-458F-43E8-A12A-45BDDFB5738F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTemplate.Services.Data", "Services\MvcTemplate.Services.Data\MvcTemplate.Services.Data.csproj", "{A6E14196-783B-46E7-8479-75E0E6B160E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{4FB56885-458F-43E8-A12A-45BDDFB5738F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB56885-458F-43E8-A12A-45BDDFB5738F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB56885-458F-43E8-A12A-45BDDFB5738F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E14196-783B-46E7-8479-75E0E6B160E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E14196-783B-46E7-8479-75E0E6B160E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E14196-783B-46E7-8479-75E0E6B160E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E14196-783B-46E7-8479-75E0E6B160E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +63,6 @@ Global
 		{272F25E6-2275-4E4B-B978-758EFCD5FAE2} = {765E5365-FCC7-4868-91A1-B0D5E6F869A8}
 		{F82041B3-E9B4-47AA-A291-FD3D73FDBC73} = {FACB7A26-3179-4A39-91A2-330713522E88}
 		{4FB56885-458F-43E8-A12A-45BDDFB5738F} = {FACB7A26-3179-4A39-91A2-330713522E88}
+		{A6E14196-783B-46E7-8479-75E0E6B160E6} = {18059E4C-0750-4A37-ACFD-D2308843DFF1}
 	EndGlobalSection
 EndGlobal
