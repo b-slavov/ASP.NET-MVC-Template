@@ -1,23 +1,27 @@
 ﻿namespace MvcTemplate.Web.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
-    using Data;
+    using Data.Common;
+    using Data.Models;
 
     public class HomeController : Controller
     {
-        // private IDbRepository<>
+        private IDbRepository<Joke> jokes;
 
-        public HomeController()
+        private IDbRepository<JokeCategory> jokeCategories;
+
+        public HomeController(IDbRepository<Joke> jokes, IDbRepository<JokeCategory> jokeCategories)
         {
-
+            this.jokes = jokes;
+            this.jokeCategories = jokeCategories;
         }
 
         public ActionResult Index()
         {
-            var db = new ApplicationDbContext();
-            var usersCount = db.Users.Count();
-            return this.View();
+            var jokes = this.jokes.All().OrderBy(j => Guid.NewGuid()).Take(3);
+            return this.View(jokes);
         }
     }
 }
