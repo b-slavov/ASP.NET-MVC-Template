@@ -5,6 +5,8 @@
     using System.Web.Mvc;
     using Data.Common;
     using Data.Models;
+    using Infrastructure.Mapping;
+    using ViewModels.Home;
 
     public class HomeController : Controller
     {
@@ -20,7 +22,7 @@
 
         public ActionResult Index()
         {
-            var jokes = this.jokes.All().OrderBy(j => Guid.NewGuid()).Take(3);
+            var jokes = this.jokes.All().OrderBy(x => Guid.NewGuid()).Take(3).To<JokeViewModel>().ToList();
             return this.View(jokes);
         }
     }
