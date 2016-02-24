@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler", "Tools\Crawler\Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTemplate.Services.Web", "Services\MvcTemplate.Services.Web\MvcTemplate.Services.Web.csproj", "{C46A4CC7-6A6C-434F-BC65-54C66ED8CE09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTemplate.Services.Web.Tests", "Tests\MvcTemplate.Services.Web.Tests\MvcTemplate.Services.Web.Tests.csproj", "{06AEA800-8897-437C-853C-688BE7A63AEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{C46A4CC7-6A6C-434F-BC65-54C66ED8CE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C46A4CC7-6A6C-434F-BC65-54C66ED8CE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C46A4CC7-6A6C-434F-BC65-54C66ED8CE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AEA800-8897-437C-853C-688BE7A63AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AEA800-8897-437C-853C-688BE7A63AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AEA800-8897-437C-853C-688BE7A63AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AEA800-8897-437C-853C-688BE7A63AEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +86,6 @@ Global
 		{A6E14196-783B-46E7-8479-75E0E6B160E6} = {18059E4C-0750-4A37-ACFD-D2308843DFF1}
 		{7C705028-1DEE-4848-BDBC-8F719FBFF8E5} = {AB9E7050-8512-4BAC-ADAB-0462E983C1C0}
 		{C46A4CC7-6A6C-434F-BC65-54C66ED8CE09} = {18059E4C-0750-4A37-ACFD-D2308843DFF1}
+		{06AEA800-8897-437C-853C-688BE7A63AEF} = {1AC3B9B0-BC9D-4B03-8B48-FE1E73B64F3A}
 	EndGlobalSection
 EndGlobal

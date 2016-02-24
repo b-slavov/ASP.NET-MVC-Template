@@ -4,14 +4,25 @@
     using System.Linq;
     using MvcTemplate.Data.Common;
     using MvcTemplate.Data.Models;
+    using Web;
 
     public class JokesService : IJokesService
     {
-        private IDbRepository<Joke> jokes;
+        private readonly IDbRepository<Joke> jokes;
+        private readonly IIdentifierProvider identifierProvider;
 
-        public JokesService(IDbRepository<Joke> jokes)
+        public JokesService(IDbRepository<Joke> jokes, IIdentifierProvider identifierProvider)
         {
             this.jokes = jokes;
+            this.identifierProvider = identifierProvider;
+        }
+
+        public Joke GetById(string id)
+        {
+            var intId = this.identifierProvider.DecodeId(id);
+            var joke = this.jokes.GetById(intId);
+
+            return joke;
         }
 
         public IQueryable<Joke> GetRandomJokes(int count)

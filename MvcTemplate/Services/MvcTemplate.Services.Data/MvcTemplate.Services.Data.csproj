@@ -55,6 +55,10 @@
       <Project>{00349633-f05c-4dcc-be0c-c4b74a8da974}</Project>
       <Name>MvcTemplate.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MvcTemplate.Services.Web\MvcTemplate.Services.Web.csproj">
+      <Project>{c46a4cc7-6a6c-434f-bc65-54c66ed8ce09}</Project>
+      <Name>MvcTemplate.Services.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
