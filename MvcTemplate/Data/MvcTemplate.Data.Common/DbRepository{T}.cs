@@ -1,9 +1,9 @@
 ﻿namespace MvcTemplate.Data.Common
 {
-    using Models;
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using Models;
 
     public class DbRepository<T> : IDbRepository<T>
         where T : BaseModel<int>

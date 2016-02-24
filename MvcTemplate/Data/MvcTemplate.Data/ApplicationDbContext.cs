@@ -14,14 +14,14 @@
         {
         }
 
+        public IDbSet<Joke> Jokes { get; set; }
+
+        public IDbSet<JokeCategory> JokeCategories { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-
-        public IDbSet<Joke> Jokes { get; set; }
-
-        public IDbSet<JokeCategory> JokeCategories { get; set; }
 
         public override int SaveChanges()
         {

@@ -1,12 +1,12 @@
 namespace MvcTemplate.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    
+
     public partial class JokeAndJokeCategories : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
+            this.CreateTable(
                 "dbo.JokeCategories",
                 c => new
                     {
@@ -19,8 +19,8 @@ namespace MvcTemplate.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.IsDeleted);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.Jokes",
                 c => new
                     {
@@ -36,17 +36,16 @@ namespace MvcTemplate.Data.Migrations
                 .ForeignKey("dbo.JokeCategories", t => t.CategoryId, cascadeDelete: true)
                 .Index(t => t.CategoryId)
                 .Index(t => t.IsDeleted);
-            
         }
-        
+
         public override void Down()
         {
-            DropForeignKey("dbo.Jokes", "CategoryId", "dbo.JokeCategories");
-            DropIndex("dbo.Jokes", new[] { "IsDeleted" });
-            DropIndex("dbo.Jokes", new[] { "CategoryId" });
-            DropIndex("dbo.JokeCategories", new[] { "IsDeleted" });
-            DropTable("dbo.Jokes");
-            DropTable("dbo.JokeCategories");
+            this.DropForeignKey("dbo.Jokes", "CategoryId", "dbo.JokeCategories");
+            this.DropIndex("dbo.Jokes", new[] { "IsDeleted" });
+            this.DropIndex("dbo.Jokes", new[] { "CategoryId" });
+            this.DropIndex("dbo.JokeCategories", new[] { "IsDeleted" });
+            this.DropTable("dbo.Jokes");
+            this.DropTable("dbo.JokeCategories");
         }
     }
 }

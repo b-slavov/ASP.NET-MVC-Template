@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Rules for MvcTemplate.Web" Description="Code analysis rules for MvcTemplate.Web.csproj." ToolsVersion="14.0">
+<RuleSet Name="Rules for MvcTemplate.Services.Data" Description="Code analysis rules for MvcTemplate.Services.Data.csproj." ToolsVersion="14.0">
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1001" Action="Warning" />
     <Rule Id="CA1009" Action="Warning" />
@@ -50,6 +50,7 @@
     <Rule Id="CA2207" Action="Warning" />
     <Rule Id="CA2212" Action="Warning" />
     <Rule Id="CA2213" Action="Warning" />
+    <Rule Id="CA2214" Action="Warning" />
     <Rule Id="CA2216" Action="Warning" />
     <Rule Id="CA2220" Action="Warning" />
     <Rule Id="CA2229" Action="Warning" />
@@ -63,12 +64,8 @@
     <Rule Id="CA2241" Action="Warning" />
     <Rule Id="CA2242" Action="Warning" />
   </Rules>
-  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
-    <Rule Id="CS8021" Action="None" />
-  </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1633" Action="None" />
-    <Rule Id="SA1649" Action="None" />
     <Rule Id="SA1652" Action="None" />
   </Rules>
 </RuleSet>

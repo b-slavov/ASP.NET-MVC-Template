@@ -8,8 +8,8 @@
 
     public class HomeController : BaseController
     {
-        private IJokesService jokes;
-        private ICategoriesService jokeCategories;
+        private readonly IJokesService jokes;
+        private readonly ICategoriesService jokeCategories;
 
         public HomeController(IJokesService jokes, ICategoriesService jokeCategories)
         {
