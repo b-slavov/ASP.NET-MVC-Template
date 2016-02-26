@@ -11,10 +11,10 @@
         [Test]
         public void TestRouteById()
         {
-            const string url = "/Joke/NTIyNC4xMjMxMjMxMzEyMw==";
+            const string Url = "/Joke/NTIyNC4xMjMxMjMxMzEyMw==";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(url).To<JokesController>(c => c.ById("NTIyNC4xMjMxMjMxMzEyMw=="));
+            routeCollection.ShouldMap(Url).To<JokesController>(c => c.ById("NTIyNC4xMjMxMjMxMzEyMw=="));
         }
     }
 }
