@@ -7,13 +7,13 @@ namespace MvcTemplate.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class JokeAndJokeCategories : IMigrationMetadata
+    public sealed partial class JokesAndJokesCategories : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(JokeAndJokeCategories));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(JokesAndJokesCategories));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602230649077_JokeAndJokeCategories"; }
+            get { return "201602100922285_JokesAndJokesCategories"; }
         }
         
         string IMigrationMetadata.Source

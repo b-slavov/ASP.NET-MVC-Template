@@ -2,9 +2,10 @@
 {
     using System;
     using System.Linq;
+
     using MvcTemplate.Data.Common;
     using MvcTemplate.Data.Models;
-    using Web;
+    using MvcTemplate.Services.Web;
 
     public class JokesService : IJokesService
     {
@@ -21,7 +22,6 @@
         {
             var intId = this.identifierProvider.DecodeId(id);
             var joke = this.jokes.GetById(intId);
-
             return joke;
         }
 

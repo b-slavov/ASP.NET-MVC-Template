@@ -1,12 +1,14 @@
-﻿namespace MvcTemplate.Web.App_Start
+﻿namespace MvcTemplate.Web
 {
     using System;
-    using Data;
-    using Data.Models;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
+
+    using MvcTemplate.Data;
+    using MvcTemplate.Data.Models;
 
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
@@ -18,24 +20,25 @@
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(
+                new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
 
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
-            {
-                AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = true
-            };
+                                        {
+                                            AllowOnlyAlphanumericUserNames = false,
+                                            RequireUniqueEmail = true
+                                        };
 
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
-            {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
-            };
+                                            {
+                                                RequiredLength = 6,
+                                                RequireNonLetterOrDigit = true,
+                                                RequireDigit = true,
+                                                RequireLowercase = true,
+                                                RequireUppercase = true,
+                                            };
 
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
@@ -62,4 +65,6 @@
             return manager;
         }
     }
+
+    // Configure the application sign-in manager which is used in this application.
 }

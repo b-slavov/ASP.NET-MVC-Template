@@ -1,6 +1,7 @@
 ﻿namespace MvcTemplate.Web.ViewModels.Manage
 {
     using System.Collections.Generic;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.Owin.Security;
 

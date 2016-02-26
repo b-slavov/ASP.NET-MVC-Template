@@ -1,11 +1,14 @@
 ﻿namespace MvcTemplate.Data
 {
     using System;
-    using System.Linq;
     using System.Data.Entity;
+    using System.Linq;
+
     using Common.Models;
+
     using Microsoft.AspNet.Identity.EntityFramework;
-    using Models;
+
+    using MvcTemplate.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -16,7 +19,7 @@
 
         public IDbSet<Joke> Jokes { get; set; }
 
-        public IDbSet<JokeCategory> JokeCategories { get; set; }
+        public IDbSet<JokeCategory> JokesCategories { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -32,8 +35,11 @@
         private void ApplyAuditInfoRules()
         {
             // Approach via @julielerman: http://bit.ly/123661P
-            foreach (var entry in this.ChangeTracker.Entries()
-                    .Where(e => e.Entity is IAuditInfo && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
+            foreach (var entry in
+                this.ChangeTracker.Entries()
+                    .Where(
+                        e =>
+                        e.Entity is IAuditInfo && ((e.State == EntityState.Added) || (e.State == EntityState.Modified))))
             {
                 var entity = (IAuditInfo)entry.Entity;
                 if (entry.State == EntityState.Added && entity.CreatedOn == default(DateTime))

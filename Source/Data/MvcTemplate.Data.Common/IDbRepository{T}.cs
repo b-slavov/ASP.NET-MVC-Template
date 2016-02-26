@@ -1,7 +1,8 @@
 ﻿namespace MvcTemplate.Data.Common
 {
     using System.Linq;
-    using Models;
+
+    using MvcTemplate.Data.Common.Models;
 
     public interface IDbRepository<T> : IDbRepository<T, int>
         where T : BaseModel<int>

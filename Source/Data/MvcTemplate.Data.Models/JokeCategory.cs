@@ -1,6 +1,7 @@
 ﻿namespace MvcTemplate.Data.Models
 {
     using System.Collections.Generic;
+
     using MvcTemplate.Data.Common.Models;
 
     public class JokeCategory : BaseModel<int>

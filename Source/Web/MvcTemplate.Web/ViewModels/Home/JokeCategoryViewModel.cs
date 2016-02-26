@@ -1,7 +1,7 @@
 ﻿namespace MvcTemplate.Web.ViewModels.Home
 {
-    using Infrastructure.Mapping;
     using MvcTemplate.Data.Models;
+    using MvcTemplate.Web.Infrastructure.Mapping;
 
     public class JokeCategoryViewModel : IMapFrom<JokeCategory>
     {

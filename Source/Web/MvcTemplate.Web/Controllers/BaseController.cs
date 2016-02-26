@@ -3,7 +3,7 @@
     using System.Web.Mvc;
     using AutoMapper;
     using Infrastructure.Mapping;
-    using Services.Web;
+    using MvcTemplate.Services.Web;
 
     public abstract class BaseController : Controller
     {

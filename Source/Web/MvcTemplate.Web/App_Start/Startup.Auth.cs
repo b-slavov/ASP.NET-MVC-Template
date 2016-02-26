@@ -1,13 +1,15 @@
 ﻿namespace MvcTemplate.Web
 {
     using System;
-    using App_Start;
-    using Data;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
+
+    using MvcTemplate.Data;
     using MvcTemplate.Data.Models;
+
     using Owin;
 
     public partial class Startup
@@ -46,10 +48,9 @@
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // Uncomment the following lines to enable logging in with third party login providers
             // app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            // appId: "",
+            // appSecret: "");
         }
     }
 }

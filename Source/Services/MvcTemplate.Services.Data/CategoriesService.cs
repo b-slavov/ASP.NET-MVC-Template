@@ -1,12 +1,13 @@
 ﻿namespace MvcTemplate.Services.Data
 {
     using System.Linq;
+
     using MvcTemplate.Data.Common;
     using MvcTemplate.Data.Models;
 
     public class CategoriesService : ICategoriesService
     {
-        private IDbRepository<JokeCategory> categories;
+        private readonly IDbRepository<JokeCategory> categories;
 
         public CategoriesService(IDbRepository<JokeCategory> categories)
         {
@@ -21,10 +22,9 @@
                 return category;
             }
 
-            category = new JokeCategory() { Name = name };
+            category = new JokeCategory { Name = name };
             this.categories.Add(category);
             this.categories.Save();
-
             return category;
         }
 

@@ -1,4 +1,4 @@
-namespace MvcTemplate.Data.Migrations
+﻿namespace MvcTemplate.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
@@ -15,6 +15,7 @@ namespace MvcTemplate.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
+
             this.CreateTable(
                 "dbo.AspNetUserRoles",
                 c => new
@@ -27,6 +28,7 @@ namespace MvcTemplate.Data.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+
             this.CreateTable(
                 "dbo.AspNetUsers",
                 c => new
@@ -46,6 +48,7 @@ namespace MvcTemplate.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
+
             this.CreateTable(
                 "dbo.AspNetUserClaims",
                 c => new
@@ -58,6 +61,7 @@ namespace MvcTemplate.Data.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
+
             this.CreateTable(
                 "dbo.AspNetUserLogins",
                 c => new

@@ -1,25 +1,11 @@
-namespace MvcTemplate.Data.Migrations
+﻿namespace MvcTemplate.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    public partial class JokeAndJokeCategories : DbMigration
+    public partial class JokesAndJokesCategories : DbMigration
     {
         public override void Up()
         {
-            this.CreateTable(
-                "dbo.JokeCategories",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        CreatedOn = c.DateTime(nullable: false),
-                        ModifiedOn = c.DateTime(),
-                        IsDeleted = c.Boolean(nullable: false),
-                        DeletedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.IsDeleted);
-
             this.CreateTable(
                 "dbo.Jokes",
                 c => new
@@ -36,16 +22,30 @@ namespace MvcTemplate.Data.Migrations
                 .ForeignKey("dbo.JokeCategories", t => t.CategoryId, cascadeDelete: true)
                 .Index(t => t.CategoryId)
                 .Index(t => t.IsDeleted);
+
+            this.CreateTable(
+                "dbo.JokeCategories",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeletedOn = c.DateTime(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.IsDeleted);
         }
 
         public override void Down()
         {
             this.DropForeignKey("dbo.Jokes", "CategoryId", "dbo.JokeCategories");
+            this.DropIndex("dbo.JokeCategories", new[] { "IsDeleted" });
             this.DropIndex("dbo.Jokes", new[] { "IsDeleted" });
             this.DropIndex("dbo.Jokes", new[] { "CategoryId" });
-            this.DropIndex("dbo.JokeCategories", new[] { "IsDeleted" });
-            this.DropTable("dbo.Jokes");
             this.DropTable("dbo.JokeCategories");
+            this.DropTable("dbo.Jokes");
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace MvcTemplate.Web.ViewModels.Home
 {
     using AutoMapper;
-    using Data.Models;
-    using Infrastructure.Mapping;
-    using Services.Web;
+    using MvcTemplate.Data.Models;
+    using MvcTemplate.Services.Web;
+    using MvcTemplate.Web.Infrastructure.Mapping;
 
     public class JokeViewModel : IMapFrom<Joke>, IHaveCustomMappings
     {
@@ -24,7 +24,8 @@
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
-            configuration.CreateMap<Joke, JokeViewModel>().ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
+            configuration.CreateMap<Joke, JokeViewModel>()
+                .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
         }
     }
 }
